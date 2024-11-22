@@ -1,0 +1,31 @@
+.hero-section {
+  background: linear-gradient(to bottom, #007bff, #0056b3);
+  padding: 100px 0;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.feature-card {
+  text-align: center;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section {
+  background: linear-gradient(to bottom, #0056b3, #003f7f);
+  padding: 60px 0;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}

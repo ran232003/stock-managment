@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import NavigationBar from "./global/NavigationBar";
+import { Route, Routes } from "react-router-dom";
+import Auth from "./pages/auth/Auth";
+import LandingPage from "./pages/landingPage/LandingPage";
+import { useEffect } from "react";
+import { useApiHelper } from "./global/apiHelper";
+import { useDispatch } from "react-redux";
+import { GET_USER_URL } from "./URLS";
+import { userAction } from "./store/userSlice";
+import StockDashboard from "./pages/stockDashboard/StockDashboard";
 
 function App() {
+  const dispatch = useDispatch();
+  const { handleApiCall } = useApiHelper();
+  const getUser = () => {
+    handleApiCall(
+      "GET",
+      GET_USER_URL,
+      {},
+      (data) => {
+        dispatch(userAction.setUser(data.user));
+        //navigate("/");
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavigationBar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<StockDashboard />} />
+        <Route path="/auth/:status" element={<Auth />} />
+      </Routes>
     </div>
   );
 }

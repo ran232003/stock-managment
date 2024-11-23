@@ -14,6 +14,7 @@ import StockPage from "./pages/stockPage/StockPage";
 import Loading from "./global/LoadingSpinners";
 import { stockAction } from "./store/stockSlice";
 import NotFound from "./pages/NotFound/NotFound";
+import PrivateDashboard from "./global/PrivateAuth";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,9 +42,12 @@ function App() {
       <NavigationBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/dashboard" element={<StockDashboard />} />
         <Route path="/auth/:status" element={<Auth />} />
-        <Route path="/stockPage/:symbol" element={<StockPage />} />
+        <Route element={<PrivateDashboard />}>
+          <Route path="/dashboard" element={<StockDashboard />} />
+
+          <Route path="/stockPage/:symbol" element={<StockPage />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Loading />

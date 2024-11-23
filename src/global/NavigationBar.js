@@ -45,9 +45,11 @@ const NavigationBar = () => {
             <Nav.Link className="my-nav-link" as={Link} to={"/"}>
               Home
             </Nav.Link>
-            <Nav.Link className="my-nav-link" as={Link} to={"/dashboard"}>
-              Dashboard
-            </Nav.Link>
+            {user ? (
+              <Nav.Link className="my-nav-link" as={Link} to={"/dashboard"}>
+                Dashboard
+              </Nav.Link>
+            ) : null}
           </Nav>
           {user ? (
             <NavDropdown

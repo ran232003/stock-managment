@@ -9,9 +9,6 @@ const StockSlice = createSlice({
     setMyStocks(state, action) {
       state.myStocks = action.payload;
     },
-    removeUser(state) {
-      state.user = null;
-    },
   },
 });
 

@@ -1,3 +1,6 @@
+we need to run npm install in 2 locations:
+root of the frontend
+root of the backend
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,4 +1,7 @@
 const MyError = require("../models/MyError");
+require("dotenv").config();
+const API_KEY = process.env.API_KEY; // API_KEY from .env
+
 const User = require("../models/user-schema");
 var jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
@@ -6,7 +9,7 @@ const axios = require("axios");
 const FINANCIAL_MODELING_PREP_URL =
   "https://financialmodelingprep.com/api/v3/search";
 const SEARCH_STOCK = "https://financialmodelingprep.com/api/v3/quote/";
-const API_KEY = "8roX02YIPYsR8ydedtXvDsBbKHCtfj1x"; // Replace with your API key
+//const API_KEY = "8roX02YIPYsR8ydedtXvDsBbKHCtfj1x"; // Replace with your API key
 
 const searchStoke = async (req, res, next) => {
   try {
@@ -81,6 +84,7 @@ const myStocks = async (req, res, next) => {
   }
 };
 const test = async (req, res) => {
+  // console.log("test", apiKey);
   const { query = "app", limit = 15 } = req.body;
   const response = await axios.get(FINANCIAL_MODELING_PREP_URL, {
     params: {

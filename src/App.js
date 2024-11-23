@@ -13,6 +13,7 @@ import StockDashboard from "./pages/stockDashboard/StockDashboard";
 import StockPage from "./pages/stockPage/StockPage";
 import Loading from "./global/LoadingSpinners";
 import { stockAction } from "./store/stockSlice";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function App() {
         <Route path="/dashboard" element={<StockDashboard />} />
         <Route path="/auth/:status" element={<Auth />} />
         <Route path="/stockPage/:symbol" element={<StockPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Loading />
     </div>

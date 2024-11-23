@@ -22,9 +22,6 @@ const NavigationBar = () => {
     return state.user.user;
   });
   const handleSignOut = async () => {
-    dispatch(loadingAction.toggleLoading(true));
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
     const data = await apiCall("POST", SIGN_OUT, {});
     if (data.status === "ok") {
       dispatch(userAction.removeUser());
@@ -51,9 +48,6 @@ const NavigationBar = () => {
             <Nav.Link className="my-nav-link" as={Link} to={"/dashboard"}>
               Dashboard
             </Nav.Link>
-            <Nav.Link className="my-nav-link" as={Link} to={"/blogs"}>
-              Blogs
-            </Nav.Link>
           </Nav>
           {user ? (
             <NavDropdown
@@ -62,14 +56,15 @@ const NavigationBar = () => {
                 <img
                   src={profilePic}
                   alt="Profile"
-                  style={{ width: "40px", borderRadius: "50%" }}
+                  style={{
+                    width: "40px",
+                    borderRadius: "50%",
+                    marginRight: "150px",
+                  }}
                 />
               } // Render profile picture as the titl
               id="basic-nav-dropdown"
             >
-              <NavDropdown.Item as={Link} to={"/dashboard?tab=profile"}>
-                Profile
-              </NavDropdown.Item>
               <NavDropdown.Item onClick={handleSignOut}>
                 Sign Out
               </NavDropdown.Item>

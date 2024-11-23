@@ -9,7 +9,6 @@ const axios = require("axios");
 const FINANCIAL_MODELING_PREP_URL =
   "https://financialmodelingprep.com/api/v3/search";
 const SEARCH_STOCK = "https://financialmodelingprep.com/api/v3/quote/";
-//const API_KEY = "8roX02YIPYsR8ydedtXvDsBbKHCtfj1x"; // Replace with your API key
 
 const searchStoke = async (req, res, next) => {
   try {

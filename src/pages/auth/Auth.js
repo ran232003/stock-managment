@@ -42,7 +42,6 @@ const Auth = () => {
     );
   const initValues = authInitValues(status);
   const validationSchema = getValidationSchema(status);
-  console.log(initValues, validationSchema);
   const handleSubmit = async (values) => {
     const url = AUTH_URL + pageStatus;
     //let apiUrlStatus = pageStatus === "login" ? "login" : "signup";

@@ -16,14 +16,12 @@ function StockDashboard(props) {
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const tabFromUrl = urlParams.get("tab");
-    console.log(tabFromUrl, "tabFromUrl");
     if (tabFromUrl) {
       setTab(tabFromUrl);
     } else {
       setTab(""); // default to empty string if no tab is specified
     }
   }, [location.search]);
-  console.log(tab, "tab");
 
   return (
     <div className="main-dash">

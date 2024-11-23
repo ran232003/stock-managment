@@ -16,7 +16,6 @@ const AuthForm = (props) => {
   } = props;
   console.log(initialValues, validationSchema);
   const handleSubmit = async (values, { resetForm }) => {
-    console.log(values);
     props.useSubmit(values);
     resetForm();
   };

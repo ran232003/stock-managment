@@ -6,7 +6,6 @@ const PrivateDashboard = () => {
   const user = useSelector((state) => {
     return state.user.user;
   });
-  console.log(user);
   if (!user) {
     return <Navigate to="*" />;
   } else {

@@ -16,16 +16,13 @@ function StockPage(props) {
   // });
   const isFave = useSelector((state) => {
     return state.stock?.myStocks.filter((sym) => {
-      console.log("map", sym, symbol);
       return sym === symbol;
     });
   });
 
-  console.log(isFave, "faveArray");
   const [stockPageValues, setStockPageValues] = useState([]);
   const dispatch = useDispatch();
   const { handleApiCall } = useApiHelper();
-  console.log(symbol);
   const [isFavorite, setIsFavorite] = useState(!!isFave); // State to track heart icon color
 
   const toggleFavorite = () => {

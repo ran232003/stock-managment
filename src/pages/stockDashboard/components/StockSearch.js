@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import StockCard from "./StockCard";
 
 function StockSearch({ stocks }) {
-  console.log(stocks, "stocks");
   return (
     <div className="search-list">
       {stocks.map((stock) => {

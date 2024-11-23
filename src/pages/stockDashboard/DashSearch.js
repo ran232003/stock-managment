@@ -17,13 +17,11 @@ function DashSearch(props) {
   const debouncedSearch = useCallback(
     _.debounce((query) => {
       if (query) {
-        console.log("Making API call with query:", query);
         const params = new URLSearchParams({
           query,
           limit: 15,
         });
         let url = SEARCH_STOKE_URL + params;
-        console.log(url);
         // handleApiCall(
         //   "GET",
         //   url,
@@ -36,7 +34,6 @@ function DashSearch(props) {
         //     console.log(error);
         //   }
         // );
-        console.log("before");
         dispatch(stockAction.setStockSearch(data));
       }
     }, 500),

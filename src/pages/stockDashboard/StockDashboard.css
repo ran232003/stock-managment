@@ -3,3 +3,84 @@
   width: 250px; /* Sidebar width */
   overflow-y: auto; /* Enable scrolling if content overflows */
 }
+.dash-search-container {
+  width: 100%;
+  /* display: flex; /* Create a flex container */
+  /* flex-direction: column; */
+}
+.main-dash {
+  display: flex; /* Create a flex container */
+  height: 100vh;
+}
+.dash-search {
+  display: flex; /* Create a flex container */
+  margin-top: 30px;
+  justify-content: center;
+  /* border: green solid 2px; */
+  width: 100%;
+}
+
+.dash-search .form-control {
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.input-search {
+  width: 30%;
+  justify-content: center;
+}
+.search-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+}
+
+.stock-card {
+  flex: 0 1 calc(33.33% - 40px); /* Three cards per row */
+  max-width: calc(33.33% - 40px); /* Account for the gap */
+  margin: 0; /* Margin handled by gap */
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Add a subtle hover effect */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.stock-card h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.stock-card .card-body {
+  background: #f9f9f9;
+  padding: 15px;
+}
+
+.stock-card .card-body p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.stock-card .card-body p strong {
+  color: #555;
+}
+.stock-card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+@media (max-width: 992px) {
+  .stock-card {
+    flex: 0 1 calc(50% - 40px); /* Two cards per row for medium screens */
+    max-width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 576px) {
+  .stock-card {
+    flex: 0 1 calc(100% - 20px); /* Full width for small screens */
+    max-width: calc(100% - 20px);
+  }
+}

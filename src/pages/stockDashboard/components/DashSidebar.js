@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { AiOutlineStock } from "react-icons/ai";
 
-function DashSidebar(props) {
+function DashSidebar() {
   return (
     <Sidebar className="sidebar my-sidebar">
       <Menu>

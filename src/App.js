@@ -10,6 +10,9 @@ import { useDispatch } from "react-redux";
 import { GET_USER_URL } from "./URLS";
 import { userAction } from "./store/userSlice";
 import StockDashboard from "./pages/stockDashboard/StockDashboard";
+import StockPage from "./pages/stockPage/StockPage";
+import Loading from "./global/LoadingSpinners";
+import { stockAction } from "./store/stockSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +24,7 @@ function App() {
       {},
       (data) => {
         dispatch(userAction.setUser(data.user));
+        dispatch(stockAction.setMyStocks(data.user.myStocks));
         //navigate("/");
       },
       (error) => {
@@ -38,7 +42,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<StockDashboard />} />
         <Route path="/auth/:status" element={<Auth />} />
+        <Route path="/stockPage/:symbol" element={<StockPage />} />
       </Routes>
+      <Loading />
     </div>
   );
 }

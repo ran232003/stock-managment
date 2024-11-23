@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const MyError = require("./models/MyError");
 const userRouter = require("./routes/user-route");
+const stockRouter = require("./routes/stoke-route");
 
 //const commentRouter = require("./routes/comment-routes");
 
@@ -30,6 +31,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 app.use("/api/stock/user", userRouter);
+app.use("/api/stock/stokes", stockRouter);
 
 app.use((req, res, next) => {
   let error = new MyError("not able to find page");

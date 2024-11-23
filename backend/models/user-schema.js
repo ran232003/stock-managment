@@ -14,8 +14,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
-    isAdmin: Boolean,
+    myStocks: [],
   },
   { timestamps: true }
 );

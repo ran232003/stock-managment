@@ -5,19 +5,27 @@ export const apiCall = async (method, url, payload) => {
     switch (method) {
       case "GET":
         console.log(url, payload);
-        response = await fetch(url, { method: "GET", credentials: "include" });
+        response = await fetch(
+          url,
+          { method: "GET", credentials: "include" },
+          5000
+        );
         break;
       case "POST":
         console.log(url, payload, method);
 
-        response = await fetch(url, {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
+        response = await fetch(
+          url,
+          {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
           },
-          body: JSON.stringify(payload),
-        });
+          5000
+        );
 
         break;
       case "DELETE":

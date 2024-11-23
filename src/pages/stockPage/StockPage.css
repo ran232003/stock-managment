@@ -1,0 +1,33 @@
+.stock-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stock-page .card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.stock-page .card-header {
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.stock-page p {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.stock-page p strong {
+  color: #555;
+}
+.heart-icon {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: #ccc; /* Default gray color */
+}
+
+.heart-icon.favorite {
+  color: red; /* Red color when favorited */
+}
